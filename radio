@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="playVid()" type="button">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br> 
+<button onclick="plusVolume()" type="button">+</button><br> 
+<button onclick="minusVolume()" type="button">-</button><br> 
+
+
+<audio id="myVideo" style="height: auto; width: inherit; max-width: 0px; max-height: 0px;" src="http://tunein.streamguys1.com/cnn"></audio>
+
+<script> 
+var vid = document.getElementById("myVideo"); 
+
+function playVid() { 
+    vid.play(); 
+} 
+
+function pauseVid() { 
+    vid.pause(); 
+}
+
+function reloadVid() {
+    vid.load();
+}
+
+function plusVolume() { 
+    var temp = vid.volume + 0.1;
+	if(temp>1)
+	{temp = 1;}
+    vid.volume = temp;
+	window.close();
+} 
+  
+function minusVolume() { 
+     var temp = vid.volume - 0.1;
+	if(temp<0)
+	{temp = 0;}
+    vid.volume = temp;
+} 
+ 
+var fileDisplayArea = document.getElementById('myVideo');
+function readTextFile(file)
+{   
+    var rawFile = new XMLHttpRequest();
+
+    rawFile.open("GET", file, false);
+	
+	
+    
+	rawFile.onreadystatechange = function ()
+    {  
+        if(rawFile.readyState === 4)
+        {  
+            if(rawFile.status === 200 || rawFile.status == 0)
+            { 
+                var allText = rawFile.responseText;
+				var comp0=fileDisplayArea.src.substr(7,7);
+				var comp1=allText.substr(7,7)
+				if(comp0==comp1)
+				{ }
+				else
+                {
+					fileDisplayArea.src = allText;
+					alert(allText);
+				} 
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+
+ playVid()
+var myVar = setInterval(myTimer, 1500);
+
+function myTimer() {
+alert("ok");
+	readTextFile("file:///home/pi/test/test.html");
+}
+
+alert("new")
+
+
+
+</script> 
+
+
+
+</body> 
+</html>
