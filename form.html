@@ -2,19 +2,21 @@
 <html>
 <body>
 
-<h2>HTML Forms</h2>
+<h2>The select Element</h2>
+<p>The select element defines a drop-down list:</p>
 
 <form action="/action_page.php">
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
+  <select name="cars">
+    <option value="a">Volvo</option>
+    <option value="b">Saab</option>
+    <option value="c">Fiat</option>
+    <option value="d">Audi</option>
+    <option value="e">Audi</option>
+    <option value="f">Audi</option>
+  </select>
   <br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+  <input type="submit">
+</form>
 
 </body>
 </html>
