@@ -1,5 +1,5 @@
 <?php
- $number=$_POST["Channel"];
- $urlLink=$_POST["url"];
+  $number=$_POST["Channel"];
+  $urlLink=$_POST["url"];
  
  ?>
